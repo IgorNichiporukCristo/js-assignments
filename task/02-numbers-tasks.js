@@ -185,7 +185,7 @@ function getParallelipidedDiagonal(a,b,c) {
 function roundToPowerOfTen(num, pow) {
 if (pow = 0){return num;}
 else {
-  return num.toFixed(pow);}
+  return Number(num.toFixed(pow));}
 }
 
 /**
