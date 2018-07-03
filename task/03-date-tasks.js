@@ -97,11 +97,11 @@ function timeSpanToString(startDate, endDate) {
 function angleBetweenClockHands(date) {
     var h = date.getUTCHours();
     var m = date.getUTCMinutes();
-    var degres = (0.5 * (60 * h -  11 * m));
-    if (degres > 180){
-      return (360 - degres) * Math.PI / 180;
+    var degree = (0.5 * (60 * h -  11 * m));
+    if (degree > 180){
+      return (360 - degree) * Math.PI / 180;
     }else {
-      return degres * Math.PI / 180;
+      return degree * Math.PI / 180;
     }
 }
 
