@@ -189,7 +189,11 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    throw new Error('Not implemented');
+        for(let i of str){
+            if(str.indexOf(i) === str.lastIndexOf(i)){
+                return i;
+            }
+        }return null;
 }
 
 
@@ -215,7 +219,11 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    let line = '';
+    line += isStartIncluded ? '[' : '(';
+    line += a < b ? a + ', ' + b :  b + ', ' + a;
+    line += isEndIncluded ? ']' : ')';
+    return line;
 }
 
 
@@ -232,7 +240,11 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    let line = '';
+    for (let i of str){
+        line = i + line;
+    } 
+    return line;
 }
 
 
@@ -249,7 +261,12 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    let line = '';
+    while (num > 0){
+        line += num % 10;
+        num = Math.floor(num/10);
+    }
+    return line;
 }
 
 
