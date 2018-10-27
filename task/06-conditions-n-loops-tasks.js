@@ -292,6 +292,18 @@ function reverseInteger(num) {
  */
 function isCreditCardNumber(ccn) {
     throw new Error('Not implemented');
+  /* let line = ccn.split('').reverse().slice(1);
+    for(let i = 0; i < line.length; i+=2){
+        line[i] *=2;
+        if (line[i] > 9){
+             line[i] -=9;}
+    }
+    let sum; 
+    for(let i of line){
+        sum += line[i];
+    }
+    return Boolean(!(sum % 10)); */
+    
 }
 
 
