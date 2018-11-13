@@ -322,7 +322,20 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    let result = 0;
+    let result2 = 0;
+    let sum = num;
+    while (sum > 0){
+        result += sum % 10;
+        sum = Math.floor(sum/10);
+    }  if (result < 9){
+        return result;
+    } else {
+        while (result > 0){
+            result2 += result % 10;
+            result = Math.floor(result/10); 
+        } return result2;
+    }
 }
 
 
@@ -408,7 +421,7 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 10 => '365'
  */
 function toNaryString(num, n) {
-    throw new Error('Not implemented');
+    return num.toString(n);
 }
 
 
