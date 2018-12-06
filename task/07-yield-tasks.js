@@ -16,14 +16,10 @@
  *  'Take one down and pass it around, 98 bottles of beer on the wall.'
  *  '98 bottles of beer on the wall, 98 bottles of beer.'
  *  'Take one down and pass it around, 97 bottles of beer on the wall.'
- *  ...
- *  '1 bottle of beer on the wall, 1 bottle of beer.'
- *  'Take one down and pass it around, no more bottles of beer on the wall.'
- *  'No more bottles of beer on the wall, no more bottles of beer.'
- *  'Go to the store and buy some more, 99 bottles of beer on the wall.'
+   *  'Go to the store and buy some more, 99 bottles of beer on the wall.'
  *
  * See the full text at
- * http://99-bottles-of-beer.net/lyrics.html
+ * http://99-bottles-of-beer.net/lyr ics.html
  *
  * NOTE: Please try to complete this task faster then original song finished:
  * https://www.youtube.com/watch?v=Z7bmyjxJuVY   :)
@@ -33,7 +29,20 @@
  *
  */
 function* get99BottlesOfBeer() {
-    throw new Error('Not implemented');
+    let bottles = 99;
+    while (bottles > 0){
+        if (bottles > 1){
+            yield `${bottles} bottles of beer on the wall, ${bottles} bottles of beer.`;
+            bottles--;
+            yield `Take one down and pass it around, ${bottles} bottle${bottles==1 ? '':'s'} of beer on the wall.`;
+        }    else { 
+            yield `${bottles} bottle of beer on the wall, ${bottles} bottle of beer.`;
+            yield `Take one down and pass it around, no more bottles of beer on the wall.`;
+            yield `No more bottles of beer on the wall, no more bottles of beer.`;
+            yield `Go to the store and buy some more, 99 bottles of beer on the wall.`;
+           bottles--;
+        }
+    }        
 }
 
 
@@ -47,7 +56,16 @@ function* get99BottlesOfBeer() {
  *
  */
 function* getFibonacciSequence() {
-    throw new Error('Not implemented');
+    let fib1=0, fib2=1; 
+    yield fib1; 
+    yield fib2; 
+    let sum = 0; 
+        while (fib2 < 39088170){ 
+            sum = sum + fib2; 
+            yield sum; 
+            fib2 = sum + fib2; 
+            yield fib2;
+        }
 }
 
 
@@ -82,7 +100,19 @@ function* getFibonacciSequence() {
  *
  */
 function* depthTraversalTree(root) {
-    throw new Error('Not implemented');
+    const s = [];
+    s.push(root);
+    while(s.length){
+        let v = s.pop();
+        if(v.children){
+           let child = v.children; 
+           //for( let w of child){
+           for (let w = child.length - 1; w >= 0; w--){
+               s.push(child[w]);
+           }
+        }
+        yield v;
+    } 
 }
 
 
@@ -108,7 +138,19 @@ function* depthTraversalTree(root) {
  *
  */
 function* breadthTraversalTree(root) {
-    throw new Error('Not implemented');
+    const s = [];
+    s.push(root);
+    while(s.length){
+        let v = s.shift();
+        if(v.children){
+           let child = v.children; 
+           //for( let w of child){
+           for (let w = 0; w <child.length ; w++){
+               s.push(child[w]);
+           }
+        }
+        yield v;
+    }
 }
 
 
@@ -126,7 +168,10 @@ function* breadthTraversalTree(root) {
  *   [ 1, 3, 5, ... ], [ -1 ] => [ -1, 1, 3, 5, ...]
  */
 function* mergeSortedSequences(source1, source2) {
-    throw new Error('Not implemented');
+    let  arrr = source1.concat(source2);
+    let str = arrr.join();
+    let sor = str.sort(compareNumbers);
+    yield sor.split();
 }
 
 
