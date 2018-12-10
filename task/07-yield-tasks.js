@@ -168,10 +168,11 @@ function* breadthTraversalTree(root) {
  *   [ 1, 3, 5, ... ], [ -1 ] => [ -1, 1, 3, 5, ...]
  */
 function* mergeSortedSequences(source1, source2) {
-    let  arrr = source1.concat(source2);
+   /* let  arrr = source1.concat(source2);
     let str = arrr.join();
     let sor = str.sort(compareNumbers);
-    yield sor.split();
+    yield sor.split();*/
+    throw new Error('Not implemented');
 }
 
 
